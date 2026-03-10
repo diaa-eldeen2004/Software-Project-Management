@@ -12,6 +12,20 @@
   --card-bg: rgba(248, 245, 238, 0.9);
 }
 
+[data-theme="dark"] {
+  --bg-paper: #1a1a1a;
+  --bg-warm: #2a2a2a;
+  --bg-stone: #3a3a3a;
+  --text-main: #e0e0e0;
+  --text-soft: #c0c0c0;
+  --accent-amber: #d4b86a;
+  --accent-bluegray: #8a9ba8;
+  --accent-teal: #7a9b95;
+  --accent-rose: #b89595;
+  --border-soft: rgba(255, 255, 255, 0.1);
+  --card-bg: rgba(26, 26, 26, 0.9);
+}
+
 *,
 *::before,
 *::after {
@@ -32,6 +46,10 @@ body {
   display: flex;
   flex-direction: column;
   background: radial-gradient(circle at top left, #fbf7ee, #efe5d7 55%, #ded3c4 100%);
+}
+
+[data-theme="dark"] body {
+  background: radial-gradient(circle at top left, #0f0f0f, #1a1a1a 55%, #2a2a2a 100%);
 }
 
 h1,
@@ -100,6 +118,10 @@ a:hover {
   opacity: 0.7;
 }
 
+[data-theme="dark"] .app-logo span:last-child {
+  opacity: 0.8;
+}
+
 .top-nav {
   display: flex;
   gap: 1.3rem;
@@ -140,16 +162,32 @@ body[data-page="it"] {
   background: radial-gradient(circle at top left, #f6faf8, #e3ece7 55%, #d0dbd3 100%);
 }
 
+[data-theme="dark"] body[data-page="it"] {
+  background: radial-gradient(circle at top left, #0a0f0e, #1a1f1e 55%, #2a2f2e 100%);
+}
+
 body[data-page="admin"] {
   background: radial-gradient(circle at top center, #fdf7f3, #f0e1d8 55%, #e0d0c5 100%);
+}
+
+[data-theme="dark"] body[data-page="admin"] {
+  background: radial-gradient(circle at top center, #0f0a08, #1f1a18 55%, #2f2a25 100%);
 }
 
 body[data-page="reader"] {
   background: radial-gradient(circle at top left, #fbf9f4, #e9e4d8 55%, #d8d3c7 100%);
 }
 
+[data-theme="dark"] body[data-page="reader"] {
+  background: radial-gradient(circle at top left, #0f0f0a, #1a1a14 55%, #2a2a1e 100%);
+}
+
 body[data-page="publisher"] {
   background: radial-gradient(circle at top right, #faf6f5, #ebdedb 55%, #d7c7c2 100%);
+}
+
+[data-theme="dark"] body[data-page="publisher"] {
+  background: radial-gradient(circle at top right, #0f0a0a, #1f1a1a 55%, #2f2525 100%);
 }
 
 /* Subtle sidebar panel */
@@ -161,6 +199,12 @@ body[data-page="publisher"] {
   background: rgba(255, 255, 255, 0.75);
   border: 1px solid rgba(0, 0, 0, 0.03);
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="dark"] .role-sidebar {
+  background: rgba(26, 26, 26, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.2);
 }
 
 .muted {
@@ -200,6 +244,10 @@ body[data-page="publisher"] {
   background: rgba(255, 255, 255, 0.9);
 }
 
+[data-theme="dark"] .btn-ghost:hover {
+  background: rgba(26, 26, 26, 0.9);
+}
+
 .btn-small {
   padding: 0.45rem 1rem;
 }
@@ -236,6 +284,11 @@ body[data-page="publisher"] {
   font-size: 0.7rem;
 }
 
+
+[data-theme="dark"] .role-nav a.is-active,
+[data-theme="dark"] .role-nav a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
 .role-nav a.is-active,
 .role-nav a:hover {
   background: rgba(0, 0, 0, 0.04);
@@ -284,6 +337,11 @@ body[data-page="publisher"] {
   font-size: 0.68rem;
 }
 
+
+[data-theme="dark"] .table th,
+[data-theme="dark"] .table td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
 .table th,
 .table td {
   padding: 0.45rem 0.3rem;
@@ -322,6 +380,10 @@ body[data-page="publisher"] {
   font-size: 0.66rem;
 }
 
+[data-theme="dark"] .pill {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 .input,
 select,
 textarea {
@@ -356,7 +418,11 @@ textarea {
 
 .list-item {
   padding: 0.6rem 0.3rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+ 
+
+[data-theme="dark"] .list-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+} border-bottom: 1px solid rgba(0, 0, 0, 0.04);
   font-size: 0.86rem;
   display: flex;
   justify-content: space-between;
@@ -387,6 +453,10 @@ textarea {
   gap: 1rem;
 }
 
+[data-theme="dark"] .footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .landing-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -412,6 +482,11 @@ textarea {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
+}
+
+[data-theme="dark"] .shortcut-link {
+  background: rgba(26, 26, 26, 0.8);
+  border: 1px dashed rgba(255, 255, 255, 0.2);
 }
 
 .shortcut-link {

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICDLS – Upload manuscript</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="publisher">
+  <div class="app-shell">
+    <header class="top-bar">
+      <div class="app-logo">
+        <span>ICDLS</span>
+        <span>Upload book or research paper</span>
+      </div>
+      <button id="themeToggle" class="btn btn-ghost btn-small">🌙 Dark</button>
+    </header>
+
+    <main class="role-layout">
+      <aside class="role-sidebar">
+        <h2 class="role-name">Publisher</h2>
+        <nav class="role-nav">
+          <a href="user-publisher.html#dashboard"><span>Dashboard</span></a>
+          <a href="user-publisher.html#manuscripts"><span>My manuscripts</span></a>
+          <a href="user-publisher.html#new"><span>New submission</span></a>
+          <a class="is-active"><span>Upload file (demo)</span></a>
+        </nav>
+      </aside>
+
+      <section class="stack">
+        <section class="card">
+          <div class="auth-header">
+            <h1>Upload file</h1>
+            <p class="muted">
+              Dummy upload form that shows how a publisher would add a new book or research paper to ICDLS.
+              This example only demonstrates layout – files are not actually stored.
+            </p>
+          </div>
+
+          <form class="stack" autocomplete="off">
+            <div>
+              <label class="label" for="uploadTitle">Title</label>
+              <input id="uploadTitle" class="input" type="text" placeholder="e.g. Reading Journeys in Digital Libraries">
+            </div>
+            <div class="input-row">
+              <div>
+                <label class="label" for="uploadType">Type</label>
+                <select id="uploadType">
+                  <option>Book</option>
+                  <option>Research paper</option>
+                  <option>Thesis</option>
+                </select>
+              </div>
+              <div>
+                <label class="label" for="uploadScope">Access scope</label>
+                <select id="uploadScope">
+                  <option>Local</option>
+                  <option>Shared</option>
+                  <option>Global</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label class="label" for="uploadFile">File</label>
+              <input id="uploadFile" class="input" type="file">
+            </div>
+            <div>
+              <label class="label" for="uploadDescription">Short description</label>
+              <textarea id="uploadDescription" rows="4" placeholder="Briefly describe the work, audience, and purpose…"></textarea>
+            </div>
+            <div>
+              <button class="btn btn-primary" type="submit">Upload to ICDLS (demo)</button>
+              <span class="muted">In a live system, this would create a new record in your manuscripts list.</span>
+            </div>
+          </form>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <span>Publisher upload · ICDLS</span>
+    <span>
+      <a href="user-publisher.html">Back to publisher workspace</a> ·
+      <a href="index.html">Home</a>
+    </span>
+  </footer>
+</body>
+</html>
+
