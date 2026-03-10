@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICDLS – IT Workspace</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="it">
+  <div class="app-shell">
+    <header class="top-bar">
+      <div class="app-logo">
+        <span>ICDLS</span>
+        <span>IT & Infrastructure Workspace</span>
+      </div>
+    </header>
+
+    <main class="role-layout">
+      <aside class="role-sidebar">
+        <h2 class="role-name">IT</h2>
+        <nav class="role-nav" id="itNav">
+          <a href="#overview" data-section="overview" class="is-active"><span>Overview</span></a>
+          <a href="#status" data-section="status"><span>Systems status</span></a>
+          <a href="#integrations" data-section="integrations"><span>Integrations</span></a>
+          <a href="#logs" data-section="logs"><span>Access logs</span></a>
+        </nav>
+      </aside>
+
+      <section class="stack" id="itSections">
+        <section id="overview" data-section-panel="overview" class="card">
+          <h1>Quietly powerful infrastructure.</h1>
+          <p class="muted">
+            This is the IT view into ICDLS. Here you see how the platform behaves inside your institution:
+            core services, regional deployments, and integration points.
+          </p>
+          <div class="stack-row">
+            <div class="card">
+              <h3>Deployment summary</h3>
+              <p class="muted">Dummy data – replace with live deployment information when connected.</p>
+              <ul class="list">
+                <li class="list-item">
+                  <div class="list-item-main">
+                    <strong>Primary region</strong><br>
+                    <span class="muted">eu-west-1 · academic cluster</span>
+                  </div>
+                  <div class="list-item-meta">
+                    <span class="pill">Production</span>
+                  </div>
+                </li>
+                <li class="list-item">
+                  <div class="list-item-main">
+                    <strong>Data residency</strong><br>
+                    <span class="muted">EU-only, research collections</span>
+                  </div>
+                  <div class="list-item-meta">
+                    <span class="pill">Policy-aligned</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Backups & resilience</h3>
+              <ul class="list">
+                <li class="list-item">
+                  <div class="list-item-main">
+                    <strong>Backup window</strong><br>
+                    <span class="muted">Nightly, 02:00–03:00</span>
+                  </div>
+                  <div class="list-item-meta">
+                    <span class="pill">RPO: 24h</span>
+                  </div>
+                </li>
+                <li class="list-item">
+                  <div class="list-item-main">
+                    <strong>Disaster recovery site</strong><br>
+                    <span class="muted">backup-eu-central</span>
+                  </div>
+                  <div class="list-item-meta">
+                    <span class="pill">RTO: 4h</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="status" data-section-panel="status" class="card" hidden>
+          <div class="stack-row" style="align-items: center; justify-content: space-between;">
+            <h2>Systems status</h2>
+            <div>
+              <span class="label">Filter</span>
+              <div class="stack-row">
+                <button class="btn btn-ghost btn-small" type="button" data-status-filter="all">All</button>
+                <button class="btn btn-ghost btn-small" type="button" data-status-filter="ok">Healthy</button>
+                <button class="btn btn-ghost btn-small" type="button" data-status-filter="warn">Needs attention</button>
+              </div>
+            </div>
+          </div>
+
+          <table class="table" id="itStatusTable">
+            <thead>
+              <tr>
+                <th>Service</th>
+                <th>Status</th>
+                <th>Region</th>
+                <th>Latency</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- filled by JS -->
+            </tbody>
+          </table>
+        </section>
+
+        <section id="integrations" data-section-panel="integrations" class="card" hidden>
+          <h2>Integrations</h2>
+          <p class="muted">Dummy integrations to illustrate how ICDLS would appear in your landscape.</p>
+          <table class="table" id="itIntegrationsTable">
+            <thead>
+              <tr>
+                <th>System</th>
+                <th>Type</th>
+                <th>Status</th>
+                <th>Last sync</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- filled by JS -->
+            </tbody>
+          </table>
+        </section>
+
+        <section id="logs" data-section-panel="logs" class="card" hidden>
+          <h2>Recent access logs</h2>
+          <p class="muted">An illustrative slice of log entries, anonymised and simplified.</p>
+          <div class="input-row" style="margin-bottom: 0.8rem;">
+            <div>
+              <label class="label" for="logSearch">Search</label>
+              <input id="logSearch" class="input" type="search" placeholder="Search by user, role, or action…">
+            </div>
+          </div>
+          <ul class="list" id="itLogList">
+            <!-- filled by JS -->
+          </ul>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <span>IT workspace · ICDLS</span>
+    <span>
+      <a href="help.html">Help</a> ·
+      <a href="admin.html">Admin workspace</a> ·
+      <a href="index.html">Home</a>
+    </span>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
+

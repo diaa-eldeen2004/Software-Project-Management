@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICDLS – Publisher Workspace</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="publisher">
+  <div class="app-shell">
+    <header class="top-bar">
+      <div class="app-logo">
+        <span>ICDLS</span>
+        <span>Publisher Workspace</span>
+      </div>
+    </header>
+
+    <main class="role-layout">
+      <aside class="role-sidebar">
+        <h2 class="role-name">Publisher</h2>
+        <nav class="role-nav" id="publisherNav">
+          <a href="#dashboard" data-section="dashboard" class="is-active"><span>Dashboard</span></a>
+          <a href="#manuscripts" data-section="manuscripts"><span>My manuscripts</span></a>
+          <a href="#new" data-section="new"><span>New submission</span></a>
+          <a href="#upload" data-section="upload"><span>Upload file (demo)</span></a>
+        </nav>
+      </aside>
+
+      <section class="stack" id="publisherSections">
+        <section id="dashboard" data-section-panel="dashboard" class="card">
+          <h1>Publish inside the same calm space.</h1>
+          <p class="muted">
+            Drafts, submissions, and impact sit next to your reading activity. The data here is illustrative,
+            showing how a real ICDLS publisher dashboard could feel.
+          </p>
+          <div class="stack-row">
+            <div class="card">
+              <h3>At a glance</h3>
+              <ul class="list" id="publisherSummary">
+                <!-- filled by JS -->
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Recently active manuscripts</h3>
+              <ul class="list" id="publisherRecent">
+                <!-- filled by JS -->
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="manuscripts" data-section-panel="manuscripts" class="card" hidden>
+          <h2>My manuscripts</h2>
+          <p class="muted">Dummy list of works across different statuses.</p>
+          <table class="table" id="publisherManuscriptsTable">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Status</th>
+                <th>Access scope</th>
+                <th>Last updated</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- filled by JS -->
+            </tbody>
+          </table>
+        </section>
+
+        <section id="new" data-section-panel="new" class="card" hidden>
+          <h2>New submission</h2>
+          <p class="muted">A simple, guided form for uploading a new manuscript. This demo only updates the on-page list.</p>
+          <form id="publisherForm" class="stack" autocomplete="off">
+            <div>
+              <label class="label" for="manuscriptTitle">Title</label>
+              <input id="manuscriptTitle" class="input" type="text" required placeholder="e.g. Quiet Interfaces in Academic Portals">
+            </div>
+            <div class="input-row">
+              <div>
+                <label class="label" for="manuscriptDiscipline">Discipline</label>
+                <input id="manuscriptDiscipline" class="input" type="text" placeholder="e.g. Library & information science">
+              </div>
+              <div>
+                <label class="label" for="manuscriptScope">Access scope</label>
+                <select id="manuscriptScope">
+                  <option value="Local">Local</option>
+                  <option value="Shared">Shared</option>
+                  <option value="Global">Global</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label class="label" for="manuscriptAbstract">Abstract</label>
+              <textarea id="manuscriptAbstract" rows="4" placeholder="Short abstract or description…"></textarea>
+            </div>
+            <div>
+              <button class="btn btn-primary" type="submit">Save as draft</button>
+              <span class="muted">The draft will appear in “My manuscripts” with status Draft.</span>
+            </div>
+          </form>
+        </section>
+         <section id="upload" data-section-panel="upload" class="card" hidden></section>
+            <section class="card">
+          <div class="auth-header">
+            <h1>Upload file</h1>
+            <p class="muted">
+              Dummy upload form that shows how a publisher would add a new book or research paper to ICDLS.
+              This example only demonstrates layout – files are not actually stored.
+            </p>
+          </div>
+
+          <form class="stack" autocomplete="off">
+            <div>
+              <label class="label" for="uploadTitle">Title</label>
+              <input id="uploadTitle" class="input" type="text" placeholder="e.g. Reading Journeys in Digital Libraries">
+            </div>
+            <div class="input-row">
+              <div>
+                <label class="label" for="uploadType">Type</label>
+                <select id="uploadType">
+                  <option>Book</option>
+                  <option>Research paper</option>
+                  <option>Thesis</option>
+                </select>
+              </div>
+              <div>
+                <label class="label" for="uploadScope">Access scope</label>
+                <select id="uploadScope">
+                  <option>Local</option>
+                  <option>Shared</option>
+                  <option>Global</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label class="label" for="uploadFile">File</label>
+              <input id="uploadFile" class="input" type="file">
+            </div>
+            <div>
+              <label class="label" for="uploadDescription">Short description</label>
+              <textarea id="uploadDescription" rows="4" placeholder="Briefly describe the work, audience, and purpose…"></textarea>
+            </div>
+            <div>
+              <button class="btn btn-primary" type="submit">Upload to ICDLS (demo)</button>
+              <span class="muted">In a live system, this would create a new record in your manuscripts list.</span>
+            </div>
+          </form>
+        </section>
+        </section>
+      </section>
+    </main>
+  </div>
+ 
+
+  <footer class="footer">
+    <span>Publisher workspace · ICDLS</span>
+    <span>
+      <a href="help.html">Help</a> ·
+      <a href="user-reader.html">Switch to reader</a> ·
+      <a href="index.html">Home</a>
+    </span>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
+

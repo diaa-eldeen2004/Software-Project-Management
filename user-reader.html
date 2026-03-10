@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICDLS – Reader Workspace</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="reader">
+  <div class="app-shell">
+    <header class="top-bar">
+      <div class="app-logo">
+        <span>ICDLS</span>
+        <span>Reader Workspace</span>
+      </div>
+    </header>
+
+    <main class="role-layout">
+      <aside class="role-sidebar">
+        <h2 class="role-name">Reader</h2>
+        <nav class="role-nav" id="readerNav">
+          <a href="#library" data-section="library" class="is-active"><span>Library</span></a>
+          <a href="#list" data-section="list"><span>My reading list</span></a>
+          <a href="#history" data-section="history"><span>History</span></a>
+          <a href="#demo" data-section="demo"><span>Demo pages</span></a>
+        </nav>
+      </aside>
+
+      <section class="stack" id="readerSections">
+        <section id="library" data-section-panel="library" class="card">
+          <h1>A quiet digital reading room.</h1>
+          <p class="muted">
+            Search, browse, and open items in a calm layout. The data on this page is illustrative only;
+            in production it would come from ICDLS search.
+          </p>
+          <div class="input-row" style="margin-bottom: 0.8rem;">
+            <div>
+              <label class="label" for="readerSearch">Search</label>
+              <input id="readerSearch" class="input" type="search" placeholder="Search by title, author, or topic…">
+            </div>
+            <div>
+              <label class="label" for="readerDiscipline">Discipline</label>
+              <select id="readerDiscipline">
+                <option value="all">All disciplines</option>
+                <option value="library-science">Library & information</option>
+                <option value="climate">Climate & policy</option>
+                <option value="education">Education</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="stack-row">
+            <div class="card">
+              <h3>Search results</h3>
+              <ul class="list" id="readerResults">
+                <!-- filled by JS -->
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Selected item</h3>
+              <p id="readerSelectedEmpty" class="muted">Choose a title to see details.</p>
+              <div id="readerSelected" hidden>
+                <p><strong id="readerSelectedTitle"></strong></p>
+                <p class="muted" id="readerSelectedMeta"></p>
+                <p id="readerSelectedAbstract"></p>
+                <button class="btn btn-primary btn-small" type="button" id="readerAddToListBtn">Add to my reading list</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="list" data-section-panel="list" class="card" hidden>
+          <h2>My reading list</h2>
+          <p class="muted">This list is stored only in the browser for now (dummy data plus anything you add).</p>
+          <ul class="list" id="readerList">
+            <!-- filled by JS -->
+          </ul>
+        </section>
+
+        <section id="history" data-section-panel="history" class="card" hidden>
+          <h2>Recent history</h2>
+          <p class="muted">Illustrative reading history, sorted by most recent.</p>
+          <ul class="list" id="readerHistory">
+            <!-- filled by JS -->
+          </ul>
+        </section>
+
+        <section id="demo" data-section-panel="demo" class="card" hidden>
+          <h2>Demo book & paper pages</h2>
+          <p class="muted">Select a sample to see how a full book or research paper appears inside ICDLS.</p>
+          <ul class="list">
+            <li class="list-item">
+              <div class="list-item-main">
+                <strong>The Night Librarian</strong><br>
+                <span class="muted">Sample story laid out like a book chapter.</span>
+              </div>
+              <div class="list-item-meta">
+                <a href="#" id="openBook">Open book view</a>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="list-item-main">
+                <strong>Quiet Interfaces in Academic Portals</strong><br>
+                <span class="muted">Sample research paper excerpt in reader layout.</span>
+              </div>
+              <div class="list-item-meta">
+                <a href="#" id="openPaper">Open paper view</a>
+              </div>
+            </li>
+          </ul>
+          <div id="demoContent" hidden>
+            <div id="demoBook" hidden>
+              <section class="book-meta">
+                <strong>Title:</strong> The Night Librarian<br>
+                <strong>Author:</strong> Dummy data · For layout only
+              </section>
+              <section class="book-page">
+                <h2>Chapter 1 · Shelves After Midnight</h2>
+                <p>
+                  The campus library closed at ten, but the light in the reading room never truly went out. Long after
+                  students drifted back to their dorms, the soft glow of task lamps and exit signs traced faint shapes
+                  across the rows of shelves. The building exhaled, settling into a quieter rhythm that only a few
+                  people ever heard.
+                </p>
+                <p>
+                  Mara, the night librarian, moved slowly between the stacks with a notebook in her hand. It was not
+                  a list of overdue books, or a tally of fines, but a catalogue of questions she had heard that day.
+                  "How do I trace the history of this river?" "Is there a way to compare old maps with climate models?"
+                  "Where did this quotation actually come from?" Each question became a small mark in the margins,
+                  a thread waiting to be followed.
+                </p>
+                <p>
+                  In the old system, most of those threads frayed before they could be tied together. Research lived
+                  in separate databases, course platforms, and shared drives that did not recognise each other. Mara
+                  could feel the gaps—students who almost found what they needed, researchers who almost saw that
+                  someone on another floor was asking the same thing.
+                </p>
+                <p>
+                  That year, the university turned on ICDLS. Nothing in the building looked different at first.
+                  The tables were still wood, the lamps still warm, the ceiling still high and quiet. But when Mara
+                  sat down at the reference desk and opened her laptop, the catalogue felt less like a list of boxes
+                  and more like a map of conversations in progress.
+                </p>
+                <p>
+                  A student in environmental science, searching for river records, could now see that a historian had
+                  uploaded digitised field notes from a century earlier. A visiting researcher’s preprint, quietly
+                  shared from another country, appeared beside local theses that had never traveled beyond the campus.
+                  The library did not become louder. It became clearer.
+                </p>
+                <p>
+                  Mara looked down at her notebook. The questions were still there, written in her careful hand,
+                  but the distance between them had changed. For the first time, she had a place where those questions
+                  could meet one another without leaving the calm of the reading room.
+                </p>
+              </section>
+            </div>
+            <div id="demoPaper" hidden>
+              <section class="book-meta">
+                <strong>Title:</strong> Quiet Interfaces in Academic Portals (Dummy excerpt)<br>
+                <strong>Author:</strong> Demo author · For layout only
+              </section>
+              <section class="book-page">
+                <h2>Abstract</h2>
+                <p>
+                  This dummy abstract illustrates how a research paper might appear inside the ICDLS reader view.
+                  It argues that the design of academic portals has historically prioritised infrastructure and
+                  search mechanics over the lived experience of reading and thinking. By studying how readers move
+                  through quiet, book-centered spaces, we can design digital interfaces that support the same depth
+                  of attention.
+                </p>
+                <h2>1. Introduction</h2>
+                <p>
+                  For decades, online academic systems have been arranged around databases rather than readers. The
+                  typical portal foregrounds filters, export buttons, and technical vocabulary. While these elements
+                  are necessary, they often occupy the visual space where a sense of narrative and continuity could live.
+                </p>
+                <p>
+                  In contrast, physical reading rooms rely on different signals: the weight of the book in the hand,
+                  the continuous spread of text across pages, and the ambient presence of other people working quietly
+                  in the same place. Readers rarely describe such spaces in terms of infrastructure; instead they speak
+                  about light, calm, and the feeling of being surrounded by knowledge.
+                </p>
+                <h2>2. Towards a quiet digital library</h2>
+                <p>
+                  ICDLS treats these qualities as first-class design constraints. Panels are rendered in soft, paper-like
+                  colours; navigation is kept shallow; and complex security and indexing logic remain present but visually
+                  understated. The aim is not to remove control from IT and administrators, but to allow their work to
+                  happen behind scenes that feel familiar to readers and authors.
+                </p>
+              </section>
+            </div>
+          </div>
+        </section>
+      </section>
+
+    </main>
+  </div>
+
+  <footer class="footer">
+    <span>Reader workspace · ICDLS</span>
+    <span>
+      <a href="help.html">Help</a> ·
+      <a href="user-publisher.html">Switch to publisher</a> ·
+      <a href="index.html">Home</a>
+    </span>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
+

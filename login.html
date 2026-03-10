@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICDLS – Log in</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="auth">
+  <div class="app-shell">
+    <header class="top-bar">
+      <div class="app-logo">
+        <span>ICDLS</span>
+        <span>Log in to your workspace</span>
+      </div>
+    </header>
+
+    <main class="auth-layout">
+      <section class="card">
+        <div class="auth-header">
+          <h1>Log in</h1>
+          <p class="muted">Dummy log in form showing the calm ICDLS style.</p>
+        </div>
+
+        <form class="stack" autocomplete="off">
+          <div>
+            <label class="label" for="loginEmail">Institutional email</label>
+            <input id="loginEmail" class="input" type="email" placeholder="name@university.edu">
+          </div>
+          <div>
+            <label class="label" for="loginPassword">Password</label>
+            <input id="loginPassword" class="input" type="password" placeholder="Enter your password">
+          </div>
+          <div>
+            <label class="label" for="loginRole">Enter as</label>
+            <select id="loginRole">
+              <option>Reader</option>
+              <option>Publisher</option>
+              <option>Reader & publisher</option>
+              <option>Admin</option>
+              <option>IT</option>
+            </select>
+          </div>
+          <div>
+            <button class="btn btn-primary" type="submit">Continue</button>
+          </div>
+        </form>
+
+        <div class="auth-footer-links">
+          <a href="forgot-password.html">Forgot password?</a>
+          <span>New to ICDLS? <a href="signup.html">Create an account</a></span>
+          <a href="help.html">Help</a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <span>Log in · ICDLS</span>
+    <span><a href="index.html">Back to home</a></span>
+  </footer>
+</body>
+</html>
+

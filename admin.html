@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICDLS – Admin Workspace</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="admin">
+  <div class="app-shell">
+    <header class="top-bar">
+      <div class="app-logo">
+        <span>ICDLS</span>
+        <span>Library & Academic Admin Workspace</span>
+      </div>
+    </header>
+
+    <main class="role-layout">
+      <aside class="role-sidebar">
+        <h2 class="role-name">Admin</h2>
+        <nav class="role-nav" id="adminNav">
+          <a href="#dashboard" data-section="dashboard" class="is-active"><span>Dashboard</span></a>
+          <a href="#collections" data-section="collections"><span>Collections</span></a>
+          <a href="#users" data-section="users"><span>Users</span></a>
+          <a href="#policies" data-section="policies"><span>Lending policies</span></a>
+        </nav>
+      </aside>
+
+      <section class="stack" id="adminSections">
+        <section id="dashboard" data-section-panel="dashboard" class="card">
+          <h1>Guide the library, not the software.</h1>
+          <p class="muted">
+            This workspace shows how ICDLS behaves as a library and academic administration tool: collections,
+            access models, and lending activity.
+          </p>
+          <div class="stack-row">
+            <div class="card">
+              <h3>Collection overview</h3>
+              <ul class="list" id="adminCollectionSummary">
+                <!-- filled by JS -->
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Current activity</h3>
+              <ul class="list" id="adminActivitySummary">
+                <!-- filled by JS -->
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="collections" data-section-panel="collections" class="card" hidden>
+          <h2>Collections</h2>
+          <p class="muted">Dummy data showing how collections might be expressed and filtered.</p>
+          <div class="input-row" style="margin-bottom:0.6rem;">
+            <div>
+              <label class="label" for="collectionFilter">Access scope</label>
+              <select id="collectionFilter">
+                <option value="all">All</option>
+                <option value="local">Local</option>
+                <option value="shared">Shared</option>
+                <option value="global">Global</option>
+              </select>
+            </div>
+          </div>
+          <table class="table" id="adminCollectionsTable">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Items</th>
+                <th>Access</th>
+                <th>Lending</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- filled by JS -->
+            </tbody>
+          </table>
+        </section>
+
+        <section id="users" data-section-panel="users" class="card" hidden>
+          <h2>Users</h2>
+          <p class="muted">Illustrative list of patron groups and roles.</p>
+          <table class="table" id="adminUsersTable">
+            <thead>
+              <tr>
+                <th>Group</th>
+                <th>Count</th>
+                <th>Default role</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- filled by JS -->
+            </tbody>
+          </table>
+        </section>
+
+        <section id="policies" data-section-panel="policies" class="card" hidden>
+          <h2>Lending policies</h2>
+          <p class="muted">Examples of controlled digital lending rules, written in plain language.</p>
+          <ul class="list" id="adminPoliciesList">
+            <!-- filled by JS -->
+          </ul>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <span>Admin workspace · ICDLS</span>
+    <span>
+      <a href="help.html">Help</a> ·
+      <a href="it.html">IT workspace</a> ·
+      <a href="index.html">Home</a>
+    </span>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
+
